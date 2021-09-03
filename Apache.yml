@@ -12,6 +12,9 @@
          - name: Start Apache Service
            service: name=httpd state=restarted
 
+         - name: Copy Index File to host a sample website
+           copy: src=/root/TestGitRepo/index.html dest=/var/www/html/
+
   handlers:
          - name: restart apache
            service: name=httpd state=restarted
