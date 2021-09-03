@@ -1,0 +1,17 @@
+
+---
+- hosts: localhost
+    
+
+
+  tasks:
+         - name: Install apache
+           yum: pkg=httpd state=latest
+           notify: restart apache
+
+         - name: Start Apache Service
+           service: name=httpd state=restarted
+
+  handlers:
+         - name: restart apache
+           service: name=httpd state=restarted
