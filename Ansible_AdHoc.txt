@@ -1,3 +1,4 @@
+This is Ansible AdHoc Commands
 $ ansible app -b -m yum -a "name=MySQL-python state=present"
 These commands install a MySQL-python package on the app group. The -b option runs an operation with become. You can provide the username using –become-user. The -m option specifies modules such as: copy, user, yum, and more. The -a option is an attribute of a specific module.
 
