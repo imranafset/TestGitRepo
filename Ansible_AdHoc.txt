@@ -1,9 +1,9 @@
-$ ansible app -b -m yum -a "name=MySQL-python state=present"
+ ansible app -b -m yum -a "name=MySQL-python state=present"
 These commands install a MySQL-python package on the app group. The -b option runs an operation with become. You can provide the username using –become-user. The -m option specifies modules such as: copy, user, yum, and more. The -a option is an attribute of a specific module.
 
 Here is another example, which executes only on the IP address specified (172.6.7.10):
 
-$ ansible app -b -a "systemctl status ntpd" --limit "172.6.7.10"
+ ansible app -b -a "systemctl status ntpd" --limit "172.6.7.10"
 The --limit option limits the selected hosts to a different pattern, and you can also use wildcards like *, !, and & (as shown in the examples below).
 
 The first example command below executes the ad hoc command on any node that ends with a .4 IP address. The second example executes on an app group on the IP 172.6.7.80. The last example executes on any machine from both groups. In this case, 172.6.7.8 is present in both groups.
